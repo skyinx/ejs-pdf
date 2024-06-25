@@ -2,7 +2,7 @@ const ejs = require("ejs");
 const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
-const http = require("http");
+const https = require("https");
 const express = require("express");
 const puppeteer = require("puppeteer");
 
@@ -10,7 +10,7 @@ const app = express();
 
 app.use(express.json());
 
-const port = process.env.PORT || 3000; // Use environment variable for port or default to 3000
+const port = process.env.PORT || 443; // Use environment variable for port or default to 3000
 
 // Set views directory for EJS templates
 app.set("views", path.join(__dirname, "views"));
@@ -81,7 +81,7 @@ app.post("/generate-pdf", async (req, res) => {
   }
 });
 
-http.createServer(app).listen(port, function () {
+https.createServer(app).listen(port, function () {
   console.log("Server starts at " + port);
 });
 

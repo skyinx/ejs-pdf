@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(cors());
 
-const port = process.env.PORT || 4000; // Use environment variable for port or default to 3000
+const port = process.env.PORT || 3000; // Use environment variable for port or default to 3000
 
 // Set views directory for EJS templates
 app.set("views", path.join(__dirname, "views"));

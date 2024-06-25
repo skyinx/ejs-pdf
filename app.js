@@ -1,5 +1,6 @@
 const ejs = require("ejs");
 const path = require("path");
+const cors = require("cors");
 const fs = require("fs");
 const http = require("http");
 const express = require("express");
@@ -9,7 +10,9 @@ const app = express();
 
 app.use(express.json());
 
-const port = process.env.PORT || 3000; // Use environment variable for port or default to 3000
+app.use(cors());
+
+const port = process.env.PORT || 4000; // Use environment variable for port or default to 3000
 
 // Set views directory for EJS templates
 app.set("views", path.join(__dirname, "views"));

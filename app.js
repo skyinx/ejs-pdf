@@ -56,6 +56,10 @@ function removeFile(name) {
   });
 }
 
+app.get("/", async (req, res) => {
+  res.status(200).send("Server is working...");
+});
+
 // API route to generate PDF
 app.post("/generate-pdf", async (req, res) => {
   try {

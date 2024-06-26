@@ -2,7 +2,7 @@ const ejs = require("ejs");
 const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
-const https = require("https");
+const http = require("http");
 const express = require("express");
 const puppeteer = require("puppeteer");
 
@@ -81,7 +81,7 @@ app.post("/generate-pdf", async (req, res) => {
   }
 });
 
-https.createServer(app).listen(port, function () {
+http.createServer(app).listen(port, function () {
   console.log("Server starts at " + port);
 });
 
